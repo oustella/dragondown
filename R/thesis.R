@@ -72,7 +72,7 @@ thesis_gitbook <- function(...){
 #'
 #' @export
 #' @return A Word Document based on (hopefully soon, but not currently)
-#' the Reed Senior Thesis Word template
+#' the Drexel PhD Thesis Word template
 #' @examples
 #' \dontrun{
 #'  output: thesisdown::thesis_word
