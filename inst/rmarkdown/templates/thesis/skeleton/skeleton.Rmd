@@ -16,8 +16,6 @@ output:
   dragondown::thesis_gitbook: default
 #  dragondown::thesis_word: default
 #  dragondown::thesis_epub: default
-# If you are creating a PDF you'll need to write your preliminary content (e.g., abstract, acknowledgements) here or
-# use code similar to line 22-23 for the .RMD files. If you are NOT producing a PDF, you can delete or silence lines 21-32 in this YAML header.
 abstract: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
 # If you'd rather include the preliminary content in files instead of inline
@@ -41,6 +39,7 @@ vita: |
   teaching and professional experience, and other pertinent data. The vita should be one page or less
 # Download your specific csl file and refer to it in the line below.
 csl: csl/apa.csl
+toc: true
 lot: true
 lof: true
 # If you prefer blank lines between paragraphs, un-silence lines  40-41 (this requires package tikz)
