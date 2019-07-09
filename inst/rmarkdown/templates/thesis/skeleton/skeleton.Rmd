@@ -1,8 +1,8 @@
 ---
 author: 'Your R. Name'
-date: 'May 20xx'
+month: 'May'
+year: '2019'
 institution: 'Drexel University'
-division: 'Graduate College'
 advisor: 'Advisor F. Name'
 # If you have more two advisors, un-silence line 7
 #altadvisor: 'Your Other Advisor'
@@ -32,6 +32,8 @@ preface: |
   (for LaTeX) and the R bookdown package, in general.
 # Specify the location of the bibliography below
 bibliography: bib/thesis.bib
+#Specify a copyright
+copyright: "All Rights Reserved."
 # Download your specific csl file and refer to it in the line below.
 csl: csl/apa.csl
 lot: true

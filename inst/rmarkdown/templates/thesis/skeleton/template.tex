@@ -1,20 +1,30 @@
-% This is the Drexel University LaTeX thesis template. All of the work
-% for developing the document class were done by W. Trevor King (WTK),
-% John K. Parejko (JKP), and Raymond Canzanese (RC). This template has been
-% adapted from the Reed College LaTeX thesis template. This adaptation
-% was done by Tyler Bradley
+%
+% This is file `template.tex',
+% generated with the docstrip utility.
+%
+% The original source files were:
+%
+% drexel-thesis.dtx  (with options: `template')
+%
+% This is a generated file.
+%
+% Copyright (C) 2010-2012 W. Trevor King
+%
+% This file may be distributed and/or modified under the conditions of
+% the LaTeX Project Public License, either version 1.3 of this license
+% or (at your option) any later version.  The latest version of this
+% license is in:
+%
+%    http://www.latex-project.org/lppl.txt
+%
+% and version 1.3 or later is part of all distributions of LaTeX version
+% 2003/06/01 or later.
+%
+% This adaptation was done by Tyler Bradley
 %
 % Most of the work on the original Reed College document class and template
 % was done by Sam Noble (SN). Later comments etc. by Ben Salzberg (BTS).
 % Additional restructuring and APA support by Jess Youngberg (JY).
-%
-% The Duke University LaTeX template developed by Mine Cetinkaya-Rundel (MCR)
-% was also used as a guide during the development of this template
-%
-% See http://web.reed.edu/cis/help/latex.html for help. There are a
-% great bunch of help pages there, with notes on
-% getting started, bibtex, etc. Go there and read it if you're not
-% already familiar with LaTeX.
 %
 % Any line that starts with a percent symbol is a comment.
 % They won't show up in the document, and are useful for notes
@@ -22,15 +32,11 @@
 % Commenting also removes a line from the document;
 % very handy for troubleshooting problems. -BTS
 
-% As far as I know, this follows the requirements laid out in
-% the 2002-2003 Senior Handbook. Ask a librarian to check the
-% document before binding. -SN
-
 %%
 %% Preamble
 %%
 % \documentclass{<something>} must begin each LaTeX document
-\documentclass[12pt,twoside]{drexel-thesis}
+\documentclass{drexel-thesis}
 % Packages are extensions to the basic LaTeX functions. Whatever you
 % want to typeset, there is probably a package out there for it.
 % Chemistry (chemtex), screenplays, you name it.
@@ -49,6 +55,8 @@
 \floatplacement{figure}{H}
 % End of CII addition
 \usepackage{rotating}
+% Allow pages to be rotated
+\usepackage{lscape}
 
 % Next line commented out by CII
 %%% \usepackage{natbib}
@@ -79,12 +87,26 @@ $if(highlighting-macros)$
   $highlighting-macros$
 $endif$
 
-% To pass between YAML and LaTeX the dollar signs are added by CII
-\title{$title$}
-\author{$author$}
-% The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
-\date{$date$}
-\division{$division$}
+
+\author{$author$}    % Fullname
+\title{$title$}     % Title Of Thesis
+\DUTmonth{$month$}  % Name of the month of you defense
+\DUTyear{$year$}   % Year you are defending
+\degree{$degree$}    % Your target degree, spelled out
+
+$for(advisor)$
+  \advisor{$advisor$}   % Advisor's full name, degree
+$endfor$
+
+$if(copyright)$
+ \copyrighttext{copyright} % If not "All Rights Reserved."
+$endif$
+
+%% unsrt style give references in order of citation
+\bibliographystyle{unsrt}
+
+
+
 \advisor{$advisor$}
 \institution{$institution$}
 \degree{$degree$}
