@@ -36,7 +36,7 @@
 %% Preamble
 %%
 % \documentclass{<something>} must begin each LaTeX document
-\documentclass{drexel-thesis}
+\documentclass[subfig,blackref,approvalform]{drexel-thesis}
 % Packages are extensions to the basic LaTeX functions. Whatever you
 % want to typeset, there is probably a package out there for it.
 % Chemistry (chemtex), screenplays, you name it.
@@ -106,26 +106,16 @@ $endif$
 \bibliographystyle{unsrt}
 
 
-
-\advisor{$advisor$}
-\institution{$institution$}
-\degree{$degree$}
 %If you have two advisors for some reason, you can use the following
 % Uncommented out by CII
-$if(altadvisor)$
-\altadvisor{$altadvisor$}
-$endif$
+% TB - commenting this out in hopes for loop will work but this implementation
+% is a potential alternative option if it does not
+% $if(altadvisor)$
+% \altadvisor{$altadvisor$}
+% $endif$
 % End of CII addition
 
-%%% Remember to use the correct department!
-\department{$department$}
-% if you're writing a thesis in an interdisciplinary major,
-% uncomment the line below and change the text as appropriate.
-% check the Senior Handbook if unsure.
-%\thedivisionof{The Established Interdisciplinary Committee for}
-% if you want the approval page to say "Approved for the Committee",
-% uncomment the next line
-%\approvedforthe{Committee}
+
 
 % Added by CII
 %%% Copied from knitr
@@ -155,51 +145,21 @@ $endif$
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-\Acknowledgements{
-$acknowledgements$
-}
-
-\Dedication{
-$dedication$
-}
-
-\Preface{
-$preface$
-}
-
-\Abstract{
-$abstract$
-}
-
-$for(header-includes)$
-	$header-includes$
-$endfor$
-% End of CII addition
-%%
-%% End Preamble
-%%
-%
-
+% Begin document - mostly copied from drexel-thesis template
 \begin{document}
+\begin{preamble}
+\frontmatter
 
-% Everything below added by CII
-$if(title)$
-  \maketitle
+$if(dedication)$
+  \begin{dedications} % OPTIONAL
+    $dedication$
+  \end{dedications}
 $endif$
 
-\frontmatter % this stuff will be roman-numbered
-\pagestyle{empty} % this removes page numbers from the frontmatter
-
-$if(acknowledgements)$
-  \begin{acknowledgements}
-    $acknowledgements$
-  \end{acknowledgements}
-$endif$
-
-$if(preface)$
-  \begin{preface}
-    $preface$
-  \end{preface}
+$if(acknowledgments)$
+  \begin{acknowledgments} % OPTIONAL
+    $acknowledgments$
+  \end{acknowledgments}
 $endif$
 
 $if(toc)$
@@ -222,19 +182,44 @@ $if(abstract)$
   \end{abstract}
 $endif$
 
-$if(dedication)$
-  \begin{dedication}
-    $dedication$
-  \end{dedication}
+\mainmatter
+\begin{thesis}
+$body$
+%% If your thesis does not use \part{}s, you may want to add a
+%% part-level PDF bookmark to set the main matter of from the front
+%% matter.
+%%\pdfbookmark[-1]{Main Matter}{Main Matter}
+
+%% Use include statements to include your main thesis code
+%% from seperate files.
+%%\include{part1}
+%%...
+\end{thesis}
+
+\bibliography{references} % Include references.bib BibTeX
+
+\appendix % If you have appendices
+%% include files with your appendicies (if any) here
+%%\include{appendixA}
+%%...
+
+$if(vita)$
+  \begin{vita} % Ph.D. only.
+    $vita$
+  \end{vita}
 $endif$
 
-\mainmatter % here the regular arabic numbering starts
-\pagestyle{fancyplain} % turns page numbering back on
-
-$body$
-
-
-% Index?
-
 \end{document}
+\endinput
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% \frontmatter % this stuff will be roman-numbered
+% \pagestyle{empty} % this removes page numbers from the frontmatter
+%
+% \mainmatter % here the regular arabic numbering starts
+% \pagestyle{fancyplain} % turns page numbering back on

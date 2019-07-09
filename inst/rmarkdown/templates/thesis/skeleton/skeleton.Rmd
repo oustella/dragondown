@@ -23,7 +23,7 @@ abstract: |
 # If you'd rather include the preliminary content in files instead of inline
 # like below, use a command like that for the abstract above.  Note that a tab is 
 # needed on the line after the `|`.
-acknowledgements: |
+acknowledgments: |
   I want to thank a few people.
 dedication: |
   You can have a dedication here if you wish. 
@@ -34,6 +34,11 @@ preface: |
 bibliography: bib/thesis.bib
 #Specify a copyright
 copyright: "All Rights Reserved."
+vita: |
+  The Vita is a biography of the student written in the third person in either essay or outline form. 
+  It should include full name, place and date of birth (optional), country of citizenship (optional), 
+  institutions attended, degrees and honors received, titles of publications, 
+  teaching and professional experience, and other pertinent data. The vita should be one page or less
 # Download your specific csl file and refer to it in the line below.
 csl: csl/apa.csl
 lot: true
