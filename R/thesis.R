@@ -1,13 +1,13 @@
 #' Creates an R Markdown PDF Thesis document
 #'
 #' This is a function called in output in the YAML of the driver Rmd file
-#' to specify using the Reed College Senior Thesis LaTeX template and cls files.
+#' to specify using the Drexel University PhD Thesis LaTeX template and cls files.
 #'
 #' @export
 #' @param toc A Boolean (TRUE or FALSE) specifying whether table of contents should be created
 #' @param toc_depth A positive integer
 #' @param highlight Syntax highlighting style. Supported styles include "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", and "haddock". Pass NULL to prevent syntax highlighting.
-#' @return A modified \code{pdf_document} based on the Reed Senior Thesis LaTeX
+#' @return A modified \code{pdf_document} based on the Drexel PhD Thesis LaTeX
 #'   template
 #' @examples
 #' \dontrun{
