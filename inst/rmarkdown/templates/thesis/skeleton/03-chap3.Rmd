@@ -128,9 +128,9 @@ If you look at the YAML header at the top of the main .Rmd file you can see that
 - When you have more than one author or editor, you need to separate each author's name by the word "and" e.g. `Author = {Noble, Sam and Youngberg, Jessica},`.
 - Bibliographies made using BibTeX (whether manually or using a manager) accept LaTeX markup, so you can italicize and add symbols as necessary.
 - To force capitalization in an article title or where all lowercase is generally used, bracket the capital letter in curly braces.
-- You can add a Reed Thesis citation^[@noble2002] option. The best way to do this is to use the phdthesis type of citation, and use the optional "type" field to enter "Reed thesis" or "Undergraduate thesis." 
+
 
 ## Anything else?
 
-If you'd like to see examples of other things in this template, please contact the Data @ Reed team (email <data@reed.edu>) with your suggestions. We love to see people using _R Markdown_ for their theses, and are happy to help.
+If you'd like to see examples of other things in this template, please file an issue at the [`dragondown` github repo](https://github.com/tbradley1013/dragondown)
 
