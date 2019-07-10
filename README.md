@@ -11,7 +11,7 @@ Under the hood, the Drexel University LaTeX template is used to ensure that docu
 To see how to create your own custom version of `dragondown` and `thesisdown`, check out the [`thesisdown`](https://github.com/ismayc/thesisdown) repo. 
 
 
-### Using `dragondown` from GitHub
+## Using `dragondown` from GitHub
 
 Most of these instructions are from [Ben Marwick's](https://github.com/benmarwick) [`huskydown`](https://github.com/benmarwick/huskydown) package adaptation of `thesisdown`.
 
@@ -72,7 +72,6 @@ If you do not want to include the approval form in your thesis rendering, then y
 
 ```
 \documentclass[subfig,blackref]{drexel-thesis}
-
 ```
 
 ### `_bookdown.yml`
