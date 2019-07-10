@@ -48,7 +48,8 @@
 \newcommand\ifdaring[2]{\if@daring #1\else #2\fi}
 \let\DUTifdaring\ifdaring
 \newcommand\DUT@makeapprovalform{
-  \includepdf[pages=-]{docs/approval-form.pdf}
+  % \includepdf[pages=-]{approval-form.pdf}
+  \includepdf[pages=-]{\@approvalForm}
 }
 % \newcommand\DUT@makeapprovalform{
 %   \thispagestyle{empty}
@@ -625,6 +626,10 @@
 }
 \let\DUTauthor\author
 \def\@DUT@author{\@latex@error{No \noexpand\author given}\@ehc}
+
+%adding option to place approval form location
+\newcommand{\approvalForm}[1]{\def\@approvalForm{#1}}
+\approvalForm{docs/approval-form.pdf}
 \def\DUTmonth#1{\gdef\@DUT@month{#1}}
 \def\@DUT@month{\@latex@error{No \noexpand\DUTmonth given}\@ehc}
 \def\DUTyear#1{\gdef\@DUT@year{#1}}

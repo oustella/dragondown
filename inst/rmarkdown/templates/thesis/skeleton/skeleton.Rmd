@@ -35,7 +35,8 @@ csl: csl/apa.csl
 toc: true
 lot: true
 lof: true
-
+# location of drexel thesis/dissertation approval form
+approvalform: approval-form.pdf
 ---
 
 <!--
