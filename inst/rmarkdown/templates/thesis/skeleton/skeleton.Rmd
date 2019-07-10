@@ -3,17 +3,18 @@ author: 'Your R. Name'
 month: 'May'
 year: '2019'
 institution: 'Drexel University'
-advisor: 'Advisor F. Name'
-# If you have more two advisors, un-silence line 7
-#altadvisor: 'Your Other Advisor'
+# If you have multiple advisors, add a second, third, etc. line with the same
+# syntax as the first
+advisor: 
+  - 'Advisor F. Name'
 department: 'Mathematics'
 degree: 'Doctor of Philosophy'
 title: 'My PhD Dissertation'
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
 output: 
-#  dragondown::thesis_pdf: default
-  dragondown::thesis_gitbook: default
+  dragondown::thesis_pdf: default
+#  dragondown::thesis_gitbook: default
 #  dragondown::thesis_word: default
 #  dragondown::thesis_epub: default
 abstract: |
@@ -34,9 +35,7 @@ csl: csl/apa.csl
 toc: true
 lot: true
 lof: true
-# If you prefer blank lines between paragraphs, un-silence lines  40-41 (this requires package tikz)
-#header-includes:
-#- \usepackage{tikz}
+
 ---
 
 <!--
