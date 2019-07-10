@@ -62,7 +62,7 @@ The following components are ones you should edit to customize your thesis:
 
 ### `docs/approval-form.pdf`
 
-In the original implementation of the drexel-thesis class, the approval form was developed with pure latex. Unfortunately, since the class was written, the approval form has been updated, and since I am not a LaTeX expert, I did not recreate the new form in pure LaTeX. In this implementation, the `drexel-thesis` class just includes a pdf file named `docs/approval-form.pdf`. This package includes a blank form from the [Drexel Graduate Forms page](https://drexel.edu/graduatecollege/forms-policies/forms/). You can use the blank form in your output or you can either replace the default file or add a new file with the information filled in. If you add a new file, you can specify the location of the file with the YAML parameter `approvalform`:
+In the original implementation of the drexel-thesis class, the approval form was developed with pure LaTeX. Unfortunately, since the class was written, the approval form has been updated, and since I am not a LaTeX expert, I did not recreate the new form in pure LaTeX. In this implementation, the `drexel-thesis` class just includes a pdf file named `docs/approval-form.pdf`. This package includes a blank form from the [Drexel Graduate Forms page](https://drexel.edu/graduatecollege/forms-policies/forms/). You can use the blank form in your output or you can either replace the default file or add a new file with the information filled in. If you add a new file, you can specify the location of the file with the YAML parameter `approvalform`:
 
 ```
 approvalform: path/to/file
