@@ -612,6 +612,7 @@
 }
 \RequirePackage{ifpdf}
 \if@approvalform\RequirePackage{tikz}\fi
+\if@approvalform\RequirePackage{pdfpages}\fi
 \renewcommand{\title}[1]{
   \gdef\@DUT@title{#1}
   \ifpdf \hypersetup{pdftitle={\@DUT@title}} \fi
