@@ -786,7 +786,7 @@
     \end{center}\par
     \if@DUT@pagebreak \vspace*{\fill}
     \centering
-    \mbox{\smash{\includegraphics[width=4cm]{drexel-logo}}}
+    \mbox{\smash{\includegraphics[width=4cm]{figure/drexel-logo}}}
     \fi
   \end{@DUT@titlepage}%
   \setcounter{footnote}{0}%
