@@ -8,7 +8,7 @@ advisor: 'Advisor F. Name'
 #altadvisor: 'Your Other Advisor'
 department: 'Mathematics'
 degree: 'Doctor of Philosophy'
-title: 'My Final College Paper'
+title: 'My PhD Dissertation'
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
 output: 
@@ -17,17 +17,18 @@ output:
 #  dragondown::thesis_word: default
 #  dragondown::thesis_epub: default
 abstract: |
-  "Here is my abstract"
+  Here is my abstract
 acknowledgments: |
-  "I want to thank a few people."
+  I want to thank a few people.
 dedication: |
-  "You can have a dedication here if you wish."
+  You can have a dedication here if you wish.
 # Specify the location of the bibliography below
 bibliography: bib/thesis.bib
 #Specify a copyright
-copyright: "All Rights Reserved."
+copyright: |
+  All Rights Reserved.
 vita: |
-  "The Vita is a biography of the student written in the third person in either essay or outline form. It should include full name, place and date of birth (optional), country of citizenship (optional), institutions attended, degrees and honors received, titles of publications, teaching and professional experience, and other pertinent data. The vita should be one page or less"
+  The Vita is a biography of the student written in the third person in either essay or outline form. It should include full name, place and date of birth (optional), country of citizenship (optional), institutions attended, degrees and honors received, titles of publications, teaching and professional experience, and other pertinent data. The vita should be one page or less
 # Download your specific csl file and refer to it in the line below.
 csl: csl/apa.csl
 toc: true
