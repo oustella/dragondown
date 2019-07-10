@@ -6,6 +6,8 @@ Currently, the PDF version is fully-functional.  The gitbook, word, and epub ver
 
 Under the hood, the Drexel University LaTeX template is used to ensure that documents conform precisely to submission standards. At the same time, composition and formatting can be done using lightweight [markdown](https://rmarkdown.rstudio.com/authoring_basics.html) syntax, and **R** code and its output can be seamlessly included using [rmarkdown](https://rmarkdown.rstudio.com).
 
+The large majority of the `drexel-thesis` LaTeX document class was developed by [W. Trevor King](https://github.com/wking) and can be found [here](https://github.com/DrexelPhysics/drexel-thesis). The `drexel-thesis.cls` file in this repo was created by following the instructions in their repo. A few minor changes were made to the `.cls` file in order to conform with the needs of this package, but for the most part, it is the same as the one they provided. 
+
 ## Customizing `dragondown` to your institution
 
 To see how to create your own custom version of `dragondown` and `thesisdown`, check out the [`thesisdown`](https://github.com/ismayc/thesisdown) repo. 
