@@ -36,7 +36,7 @@ toc: true
 lot: true
 lof: true
 # location of drexel thesis/dissertation approval form
-approvalform: approval-form.pdf
+approvalform: docs/approval-form.pdf
 ---
 
 <!--
