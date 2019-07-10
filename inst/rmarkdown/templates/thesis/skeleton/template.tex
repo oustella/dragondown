@@ -35,7 +35,6 @@
 %%
 %% Preamble
 %%
-% \documentclass{<something>} must begin each LaTeX document
 \documentclass[subfig,blackref,approvalform]{drexel-thesis}
 % Packages are extensions to the basic LaTeX functions. Whatever you
 % want to typeset, there is probably a package out there for it.
@@ -47,7 +46,7 @@
 \usepackage{amssymb,amsthm}
 \usepackage{longtable,booktabs,setspace}
 \usepackage{chemarr} %% Useful for one reaction arrow, useless if you're not a chem major
-\usepackage[hyphens]{url}
+%\usepackage[hyphens]{url}
 % Added by CII
 \usepackage{hyperref}
 \usepackage{lmodern}
@@ -99,7 +98,7 @@ $for(advisor)$
 $endfor$
 
 $if(copyright)$
- \copyrighttext{copyright} % If not "All Rights Reserved."
+ \copyrighttext{$copyright$} % If not "All Rights Reserved."
 $endif$
 
 %% unsrt style give references in order of citation
@@ -179,6 +178,7 @@ $if(abstract)$
     $abstract$
   \end{abstract}
 $endif$
+\end{preamble}
 
 \mainmatter
 \begin{thesis}
