@@ -48,87 +48,90 @@
 \newcommand\ifdaring[2]{\if@daring #1\else #2\fi}
 \let\DUTifdaring\ifdaring
 \newcommand\DUT@makeapprovalform{
-  \thispagestyle{empty}
-  \begingroup
-  \newlength{\tempskipa}
-  \newlength{\tempskipb}
-  \parindent \z@
-  \settowidth{\tempskipa}{\drexellogobw}
-  \addtolength{\tempskipa}{1em}
-  \setlength{\tempskipb}{\textwidth}
-  \addtolength{\tempskipb}{-\tempskipa}
-  \addtolength{\tempskipb}{-1em}
-  \begin{minipage}[c]{\tempskipa}
-    \raisebox{-0.5\height}{\drexellogobw}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[c]{\tempskipb}
-    \textbf{\Huge Office of Graduate Studies} \linebreak
-    \vskip 0.1\baselineskip
-    \textbf{\LARGE Dissertation / Thesis Approval Form} \linebreak
-  \end{minipage}
-
-  \vskip 2\baselineskip
-
-  This form is for use by all doctoral and master's students with a
-  dissertation/thesis requirement.  Please print clearly as the
-  library will bind a copy of this form with each copy of the
-  dissertation/thesis.  All doctoral dissertations must conform to
-  university format requirements, which is the responsibility of the
-  student and supervising professor.  Students should obtain a copy of
-  the Thesis Manual located on the library website.
-
-  \vspace*{\fill}
-  \settowidth{\tempskipb}{Dissertation/Thesis Title:}
-  \setlength{\tempskipa}{\textwidth}
-  \addtolength{\tempskipa}{-\tempskipb}
-  \addtolength{\tempskipa}{-4em}
-  \begin{spacing}{2}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l p{\tempskipa}}
-      \textbf{Dissertation/Thesis Title:} & \@DUT@title \\
-      \textbf{Author:} & \@DUT@author
-    \end{tabular*}
-
-    \vspace*{\fill}
-
-    \begin{center}
-      \textbf{This dissertation/thesis is hereby accepted and approved.}
-    \end{center}
-
-    \vspace*{\fill}
-
-    \textbf{Signatures:} \\
-    Examining Committee \\
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} p{0pt} l p{\tempskipa}}
-      & Chair            & \hrulefill \\
-      & Members          & \hrulefill \\
-      &                  & \hrulefill \\
-      &                  & \hrulefill \\
-      &                  & \hrulefill \\
-      &                  & \hrulefill \\
-      & Academic Advisor & \hrulefill \\
-      & Department Head  & \hrulefill
-    \end{tabular*}
-
-    \vspace*{\fill}
-  \end{spacing}
-
-  \begin{center}\scriptsize
-    Office of Graduate Studies
-    $\bullet$ 3141 Chestnut St.
-    $\bullet$ Randell Hall 240
-    $\bullet$ Philadelphia, PA 19104 \\
-    \textbf{Tel.}: 215-895-0366
-    $\bullet$ \textbf{Fax}: 215-895-0495
-    $\bullet$ \textbf{Email}:
-      \href{mailto:graduate@drexel.edu}{graduate@drexel.edu}
-    $\bullet$ \textbf{Web}:
-      \href{http://www.drexel.edu/provost/graduatestudies/}{%
-                   www.drexel.edu/provost/graduatestudies}
-  \end{center}
-  \endgroup
-  \pagebreak
+  \includepdf[pages=-]{docs/approval-form.pdf}
 }
+% \newcommand\DUT@makeapprovalform{
+%   \thispagestyle{empty}
+%   \begingroup
+%   \newlength{\tempskipa}
+%   \newlength{\tempskipb}
+%   \parindent \z@
+%   \settowidth{\tempskipa}{\drexellogobw}
+%   \addtolength{\tempskipa}{1em}
+%   \setlength{\tempskipb}{\textwidth}
+%   \addtolength{\tempskipb}{-\tempskipa}
+%   \addtolength{\tempskipb}{-1em}
+%   \begin{minipage}[c]{\tempskipa}
+%     \raisebox{-0.5\height}{\drexellogobw}
+%   \end{minipage}
+%   \hfill
+%   \begin{minipage}[c]{\tempskipb}
+%     \textbf{\Huge Office of Graduate Studies} \linebreak
+%     \vskip 0.1\baselineskip
+%     \textbf{\LARGE Dissertation / Thesis Approval Form} \linebreak
+%   \end{minipage}
+%
+%   \vskip 2\baselineskip
+%
+%   This form is for use by all doctoral and master's students with a
+%   dissertation/thesis requirement.  Please print clearly as the
+%   library will bind a copy of this form with each copy of the
+%   dissertation/thesis.  All doctoral dissertations must conform to
+%   university format requirements, which is the responsibility of the
+%   student and supervising professor.  Students should obtain a copy of
+%   the Thesis Manual located on the library website.
+%
+%   \vspace*{\fill}
+%   \settowidth{\tempskipb}{Dissertation/Thesis Title:}
+%   \setlength{\tempskipa}{\textwidth}
+%   \addtolength{\tempskipa}{-\tempskipb}
+%   \addtolength{\tempskipa}{-4em}
+%   \begin{spacing}{2}
+%     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l p{\tempskipa}}
+%       \textbf{Dissertation/Thesis Title:} & \@DUT@title \\
+%       \textbf{Author:} & \@DUT@author
+%     \end{tabular*}
+%
+%     \vspace*{\fill}
+%
+%     \begin{center}
+%       \textbf{This dissertation/thesis is hereby accepted and approved.}
+%     \end{center}
+%
+%     \vspace*{\fill}
+%
+%     \textbf{Signatures:} \\
+%     Examining Committee \\
+%     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} p{0pt} l p{\tempskipa}}
+%       & Chair            & \hrulefill \\
+%       & Members          & \hrulefill \\
+%       &                  & \hrulefill \\
+%       &                  & \hrulefill \\
+%       &                  & \hrulefill \\
+%       &                  & \hrulefill \\
+%       & Academic Advisor & \hrulefill \\
+%       & Department Head  & \hrulefill
+%     \end{tabular*}
+%
+%     \vspace*{\fill}
+%   \end{spacing}
+%
+%   \begin{center}\scriptsize
+%     Office of Graduate Studies
+%     $\bullet$ 3141 Chestnut St.
+%     $\bullet$ Randell Hall 240
+%     $\bullet$ Philadelphia, PA 19104 \\
+%     \textbf{Tel.}: 215-895-0366
+%     $\bullet$ \textbf{Fax}: 215-895-0495
+%     $\bullet$ \textbf{Email}:
+%       \href{mailto:graduate@drexel.edu}{graduate@drexel.edu}
+%     $\bullet$ \textbf{Web}:
+%       \href{http://www.drexel.edu/provost/graduatestudies/}{%
+%                    www.drexel.edu/provost/graduatestudies}
+%   \end{center}
+%   \endgroup
+%   \pagebreak
+% }
 \newcommand\drexellogobw{
   \begin{tikzpicture}[y=0.8pt, x=0.8pt,yscale=-1, inner sep=0pt, outer sep=0pt]
   \begin{scope}[cm={{1.25,0.0,0.0,-1.25,(-332.5,550.73629)}},]
