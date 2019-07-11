@@ -1,8 +1,8 @@
+# `dragondown`
+
 <center>
 ![](drexel-logo.png)
 </center>
-
-# `dragondown`
 
 This project was inspired by the [`thesisdown`](https://github.com/ismayc/thesisdown) package 
 
