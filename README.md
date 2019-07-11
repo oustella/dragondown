@@ -1,5 +1,7 @@
 # dragondown
 
+![](drexel-logo.png)
+
 This project was inspired by the [`thesisdown`](https://github.com/ismayc/thesisdown) package 
 
 Currently, the PDF version is fully-functional.  The gitbook, word, and epub versions are developmental, have no templates behind them, and are essentially calls to the appropriate functions in bookdown.
