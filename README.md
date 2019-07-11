@@ -1,8 +1,8 @@
-# `dragondown`
-
 <p align="center">
   <img src="drexel-logo.png">
 </p>
+
+# `dragondown`
 
 This project was inspired by the [`thesisdown`](https://github.com/ismayc/thesisdown) package 
 
