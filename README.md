@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="700" height="200" src="drexel-logo.png">
+  <img src="drexel-logo.png">
 </p>
 
 # `dragondown`
