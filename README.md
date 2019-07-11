@@ -12,6 +12,8 @@ Under the hood, the Drexel University LaTeX template is used to ensure that docu
 
 The large majority of the `drexel-thesis` LaTeX document class was developed by [W. Trevor King](https://github.com/wking) and can be found [here](https://github.com/DrexelPhysics/drexel-thesis). The `drexel-thesis.cls` file in this repo was created by following the instructions in their repo. A few minor changes were made to the `.cls` file in order to conform with the needs of this package, but for the most part, it is the same as the one they provided. 
 
+You can see what a rendering of the pdf version of the thesis will look like [here](https://github.com/tbradley1013/dragondown_book/blob/master/_book/thesis.pdf)
+
 ## Customizing `dragondown` to your institution
 
 To see how to create your own custom version of `dragondown` and `thesisdown`, check out the [`thesisdown`](https://github.com/ismayc/thesisdown) repo. 
