@@ -1,3 +1,11 @@
+%% This file was generated from the drexel-thesis
+%% LaTeX class and then modified for use with the
+%% dragondown package. If this file is to be replaced
+%% at any point with an updated version of the
+%% drexel-thesis class, please note the differences
+%% between this file and the one generated to ensure
+%% that no breaking changed will occur.
+%%
 %%
 %% This is file `drexel-thesis.cls',
 %% generated with the docstrip utility.
