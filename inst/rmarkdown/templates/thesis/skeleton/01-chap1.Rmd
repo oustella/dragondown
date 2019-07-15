@@ -114,7 +114,7 @@ We begin by checking to ensure that needed packages are installed and then we lo
 
 ```{r load_pkgs, message=FALSE}
 # List of packages required for this analysis
-pkg <- c("dplyr", "ggplot2", "knitr", "bookdown", "devtools")
+pkg <- c("dplyr", "ggplot2", "knitr", "bookdown", "devtools", "kableExtra")
 # Check if packages are not installed and assign the
 # names of the packages not installed to the variable new.pkg
 new.pkg <- pkg[!(pkg %in% installed.packages())]
@@ -124,6 +124,7 @@ if (length(new.pkg))
   install.packages(new.pkg, repos = "http://cran.rstudio.com")
 # Load packages (daragondown will load all of the packages as well)
 library(dragondown)
+library(kableExtra)
 ```
 
 \clearpage
@@ -149,11 +150,11 @@ kable(max_delays,
       col.names = c("Airline", "Max Arrival Delay"),
       caption = "Maximum Delays by Airline",
       caption.short = "Max Delays by Airline",
-      longtable = TRUE,
-      booktabs = TRUE)
+      longtable = TRUE, booktabs = TRUE) %>% 
+  kable_styling(latex_options = c("repeat_header"))
 ```
 
-The last two options make the table a little easier-to-read.
+The last two options make the table a little easier-to-read. The `repeat_header` option in the `kable_styling` command is required to properly conform to Drexel's table requirements. This option allows for the table caption to be repeated on each page as the Thesis Manual dictates. 
 
 We can further look into the properties of the largest value here for American Airlines Inc.  To do so, we can isolate the row corresponding to the arrival delay of 1539 minutes for American in our original `flights` dataset.
 
