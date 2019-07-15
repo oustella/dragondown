@@ -2,7 +2,7 @@
   <img src="drexel-logo.png">
 </p>
 
-# `dragondown` <img src="dragondown.png" align="right" />
+# `dragondown` <img src="dragondown.png" align="right" width="200px" height="200px" />
 
 This project was inspired by the [`thesisdown`](https://github.com/ismayc/thesisdown) package 
 
