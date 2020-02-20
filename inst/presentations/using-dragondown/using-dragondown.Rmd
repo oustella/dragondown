@@ -86,4 +86,12 @@ class: center, inverse, middle
 
 ---
 
+# Why use `dragondown`?
 
+.large[`dragondown` takes all of the benefits of using Rmarkdown and wraps them up with a shiny bow*]
+
+.large[Allows you to break about your dissertation chapters to make them more manageable while still bundling them all together correctly]
+
+.large[Provides a structured framework for effectively storing all of the materials associated with your dissertation]
+
+.footnote[*shiny bow includes handling all formatting requirements of a Drexel dissertation]
