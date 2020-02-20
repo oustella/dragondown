@@ -95,3 +95,18 @@ class: center, inverse, middle
 .large[Provides a structured framework for effectively storing all of the materials associated with your dissertation]
 
 .footnote[*shiny bow includes handling all formatting requirements of a Drexel dissertation]
+
+---
+
+## The shiny bow (i.e. formatting)
+
+
+
+---
+
+## Managing your chapters (i.e. index)
+
+
+---
+
+## Structured Framework (i.e. Neat Files)
