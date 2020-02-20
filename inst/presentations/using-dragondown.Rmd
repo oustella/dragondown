@@ -1,0 +1,72 @@
+---
+title: "Using `dragondown` to Write Your Thesis"
+author: "Tyler Bradley"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ['xaringan-themer.css', 'using-dragondown-styles.css']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    includes:
+      after_body: insert-logo.html
+---
+
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE}
+library(xaringanthemer)
+duo(
+  primary_color = "#07294D", 
+  secondary_color = "#FFC600",
+  code_font_family = "Fira Code",
+  code_font_url    = "https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css"
+)
+```
+
+# Agenda
+
+.xlarge[
+  1. Introduction
+  
+2. What is Rmarkdown
+
+3. Using `dragondown`
+
+4. Live Demo
+
+5. Version Control
+
+]
+
+---
+
+# What is `dragondown`?
+
+.large[
+
+  - `dragondown` is an R package that allows you to write your thesis in Rmarkdown
+  
+- Provides the required templates to properly format your thesis or dissertation in the Drexel format
+  
+- Easily integrate text, code and outputs 
+  
+- Allows you to focus on your research and not think about the minute formatting details often required with other text editors (e.g. LaTeX)
+  
+]
+ 
+
+---
+
+# What is Rmarkdown?
+
+.xlarge[
+A framework for authoring documents allowing you to easily integrate code and text to produce high quality output!
+
+]
