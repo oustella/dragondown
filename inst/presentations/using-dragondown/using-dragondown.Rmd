@@ -90,7 +90,7 @@ Benefits:
 4. [Python]() and [`reticulate`]*
 ]
 
-.footnote[*If you want to use python in your Rmarkdown documents]
+.footnote[*If you want to use python in your Rmarkdown documents. See [here](https://rstudio.github.io/reticulate/articles/r_markdown.html) if you are interested in learning more]
 ---
 class: center, inverse, middle
 
