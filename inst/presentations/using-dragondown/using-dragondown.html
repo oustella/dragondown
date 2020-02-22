@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
   <head>
     <title>Using dragondown to Write Your Thesis</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tyler Bradley" />
-    <meta name="date" content="2020-02-20" />
+    <meta name="date" content="2020-02-22" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="using-dragondown-styles.css" type="text/css" />
   </head>
@@ -14,7 +14,7 @@ class: center, middle, inverse, title-slide
 
 # Using <code>dragondown</code> to Write Your Thesis
 ### Tyler Bradley
-### 2020-02-20
+### 2020-02-22
 
 ---
 
@@ -75,6 +75,20 @@ Benefits:
 ]
 
 ---
+# Dependencies
+
+.xlarge[
+  1. [R](https://www.r-project.org/)
+2. [RStudio](https://rstudio.com/products/rstudio/download/)
+3. [LaTeX*](https://yihui.name/tinytex/)
+4. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) or equivalent version control system
+  .large[- See [Happy Git with R](https://happygitwithr.com/) for more instructions]
+5. [Python]() and [`reticulate`]**
+]
+
+.footnote[*Using `tinytex` is the easiest way to deal with this for R users]
+.footnote[**If you want to use python in your Rmarkdown documents. See [here](https://rstudio.github.io/reticulate/articles/r_markdown.html) if you are interested in learning more]
+---
 class: center, inverse, middle
 
 # Live Demo
@@ -95,16 +109,31 @@ class: center, inverse, middle
 
 ## The shiny bow (i.e. formatting)
 
+.pull-left[
+  .large[Writing a thesis is hard enough, why kill yourself worrying about something as minute as matching [exact formatting requirements](https://www.library.drexel.edu/~/media/Files/graduatecollege/forms/Thesis%20Manual.ashx?la=en)?]
+
+  .large[If you write your thesis using the `dragondown` package, then the formatting is automatically handled for you with the help of a custom LaTeX template!]
+]
+
+.pull-right[
+.middle[![](dragondown-format-example.gif)]
+]
 
 
 ---
 
-## Managing your chapters (i.e. `index.html`)
+## Managing your chapters (i.e. index)
 
 
 ---
 
 ## Structured Framework (i.e. Neat Files)
+
+
+---
+class: center, middle, inverse
+
+# Live Demo
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -151,7 +180,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     deleted = true;
   });
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 <style>
 .logo {
   background-image: url(dragondown.png);

@@ -85,12 +85,14 @@ Benefits:
 .xlarge[
   1. [R](https://www.r-project.org/)
 2. [RStudio](https://rstudio.com/products/rstudio/download/)
-3. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) or equivalent version control system
+3. [LaTeX*](https://yihui.name/tinytex/)
+4. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) or equivalent version control system
   .large[- See [Happy Git with R](https://happygitwithr.com/) for more instructions]
-4. [Python]() and [`reticulate`]*
+5. [Python]() and [`reticulate`]**
 ]
 
-.footnote[*If you want to use python in your Rmarkdown documents. See [here](https://rstudio.github.io/reticulate/articles/r_markdown.html) if you are interested in learning more]
+.footnote[*Using `tinytex` is the easiest way to deal with this for R users]
+.footnote[**If you want to use python in your Rmarkdown documents. See [here](https://rstudio.github.io/reticulate/articles/r_markdown.html) if you are interested in learning more]
 ---
 class: center, inverse, middle
 
@@ -112,6 +114,15 @@ class: center, inverse, middle
 
 ## The shiny bow (i.e. formatting)
 
+.pull-left[
+  .large[Writing a thesis is hard enough, why kill yourself worrying about something as minute as matching [exact formatting requirements](https://www.library.drexel.edu/~/media/Files/graduatecollege/forms/Thesis%20Manual.ashx?la=en)?]
+
+  .large[If you write your thesis using the `dragondown` package, then the formatting is automatically handled for you with the help of a custom LaTeX template!]
+]
+
+.pull-right[
+.middle[![](dragondown-format-example.gif)]
+]
 
 
 ---
