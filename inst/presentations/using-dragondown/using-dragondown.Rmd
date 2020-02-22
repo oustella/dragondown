@@ -80,6 +80,18 @@ Benefits:
 ]
 
 ---
+# Dependencies
+
+.xlarge[
+  1. [R](https://www.r-project.org/)
+2. [RStudio](https://rstudio.com/products/rstudio/download/)
+3. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) or equivalent version control system
+  .large[- See [Happy Git with R](https://happygitwithr.com/) for more instructions]
+4. [Python]() and [`reticulate`]*
+]
+
+.footnote[*If you want to use python in your Rmarkdown documents]
+---
 class: center, inverse, middle
 
 # Live Demo
