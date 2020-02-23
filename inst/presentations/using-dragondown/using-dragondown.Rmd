@@ -44,7 +44,11 @@ duo(
 5. Version Control
 
 ]
+---
+class:center, middle
 
+<!-- <video src="https://www.youtube.com/watch?v=s3JldKoA0zw"></video> -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s3JldKoA0zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ---
 
 # What is `dragondown`?
