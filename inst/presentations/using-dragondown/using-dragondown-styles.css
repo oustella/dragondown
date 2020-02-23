@@ -6,10 +6,27 @@
   font-size:36px;
 }
 
+.remark-slide-content .xxlarge {
+  font-size:48px;
+}
+
 .remark-slide-content .small {
   font-size: 16px;
 }
 
 .remark-slide-content .xsmall {
   font-size: 12px;
+}
+
+.remark-slide-content .xxsmall {
+  font-size: 10px;
+  margin-top:-10px;
+}
+
+.fs-list {
+  margin-top:-10px;
+}
+
+.remark-code-line {
+  white-space: normal;
 }

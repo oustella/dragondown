@@ -103,6 +103,9 @@ class: center, inverse, middle
 
 .large[Provides a structured framework for effectively storing all of the materials associated with your dissertation]
 
+&lt;br&gt;&lt;br&gt;
+.xxlarge.center[**Reproducibility**]
+
 .footnote[*shiny bow includes handling all formatting requirements of a Drexel dissertation]
 
 ---
@@ -124,10 +127,127 @@ class: center, inverse, middle
 
 ## Managing your chapters (i.e. index)
 
+.pull-left[
+.large[`dragondown` provides a structured framework for organizing your thesis]
+
+.large[You can keep all of the files required for your thesis (e.g. book chapters, figures, R scripts)]
+]
+
+.xxsmall.pull-right[
+
+```
+live-examples/index
+├── 01-chap1.Rmd
+├── 02-chap2.Rmd
+├── 03-chap3.Rmd
+├── 04-conclusion.Rmd
+├── 98-references.Rmd
+├── 99-appendix.Rmd
+├── _book
+│   ├── thesis.pdf
+│   └── thesis.tex
+├── _bookdown.yml
+├── _bookdown_files
+│   ├── thesis_cache
+│   │   └── latex
+│   │       ├── __packages
+│   │       ├── pressure_25293cdac8eae1a4e2086266bdb915b8.RData
+│   │       ├── pressure_25293cdac8eae1a4e2086266bdb915b8.rdb
+│   │       └── pressure_25293cdac8eae1a4e2086266bdb915b8.rdx
+│   └── thesis_files
+│       └── figure-latex
+│           ├── delaysboxplot-1.pdf
+│           ├── march3plot-1.pdf
+│           └── pressure-1.pdf
+├── bib
+│   └── thesis.bib
+├── chemarr.sty
+├── csl
+│   └── apa.csl
+├── data
+│   └── flights.csv
+├── docs
+│   ├── approval-form.pdf
+│   └── drexel-thesis.pdf
+├── drexel-thesis.cls
+├── figure
+│   ├── drexel-logo.pdf
+│   └── subdivision.pdf
+├── index.Rmd
+├── template.tex
+└── thesis.log
+```
+]
+---
+#`_bookdown.yml`
+.small[
+
+```
+book_filename: "thesis"
+chapter_name: "Chapter "
+rmd_files: ["index.Rmd", "01-chap1.Rmd", "02-chap2.Rmd", "03-chap3.Rmd", "04-conclusion.Rmd", "98-references.Rmd", "99-appendix.Rmd"]
+download: [["thesis.pdf", "PDF"], ["thesis.epub", "EPUB"], ["thesis.docx", "Word"]]
+delete_merged_file: true
+```
+]
+
+- `chapter_name`: sets the prefix for your chapters
+- `rmd_files`: List the order of all of your .Rmd files. If you add a chapter then you need to add it here to include it in your book
+
+---
+# `index.Rmd`
+.xxsmall[
+```
+---
+author: 'Your R. Name'
+month: 'May'
+year: '2019'
+institution: 'Drexel University'
+# If you have multiple advisors, add a second, third, etc. line with the same
+# syntax as the first
+advisor: 
+  - 'Advisor F. Name'
+department: 'Mathematics'
+degree: 'Doctor of Philosophy'
+title: 'My PhD Dissertation'
+knit: "bookdown::render_book"
+site: bookdown::bookdown_site
+output: 
+  dragondown::thesis_pdf: default
+#  dragondown::thesis_gitbook: default
+#  dragondown::thesis_word: default
+#  dragondown::thesis_epub: default
+abstract: |
+  Here is my abstract
+acknowledgments: |
+  I want to thank a few people.
+dedication: |
+  You can have a dedication here if you wish.
+# Specify the location of the bibliography below
+bibliography: bib/thesis.bib
+#Specify a copyright
+copyright: |
+  All Rights Reserved.
+vita: |
+  The Vita is a biography of the student written in the third person in either essay or outline form. It should include full name, place and date of birth (optional), country of citizenship (optional), institutions attended, degrees and honors received, titles of publications, teaching and professional experience, and other pertinent data. The vita should be one page or less
+# Download your specific csl file and refer to it in the line below.
+csl: csl/apa.csl
+toc: true
+lot: true
+lof: true
+# location of drexel thesis/dissertation approval form
+approvalform: docs/approval-form.pdf
+---
+```
+]
 
 ---
 
-## Structured Framework (i.e. Neat Files)
+## Reproducibility
+
+.large[Using this framework makes it easy for people (**including yourself**) to recreate your work because all of the data, analysis, and text are in the same place]
+
+
 
 
 ---
