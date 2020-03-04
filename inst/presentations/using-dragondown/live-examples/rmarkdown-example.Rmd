@@ -63,15 +63,15 @@ elrod_tidy %>%
 ```
 
 
-# Using python
+## Using python
 
 Sit cum accumsan cras nibh volutpat netus iaculis. Ultricies elementum eget mollis arcu risus habitasse dictumst mi. Potenti ultrices leo sem felis pellentesque conubia ligula orci fames. Netus proin tempor iaculis sollicitudin himenaeos netus etiam nulla varius pharetra. Lacus aptent neque ut congue molestie interdum commodo class placerat molestie cras vitae donec ultricies?
 
-```{using-python}
+```{using-python, eval = FALSE}
 library(reticulate)
 use_python("/usr/bin/python")
 ```
 
-```{python}
+```{python, eval = FALSE}
 import pandas as pd
 ```
