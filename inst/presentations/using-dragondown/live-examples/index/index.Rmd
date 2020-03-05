@@ -1,5 +1,5 @@
 ---
-author: 'Your R. Name'
+author: 'Tyler Bradley'
 month: 'May'
 year: '2019'
 institution: 'Drexel University'
@@ -18,7 +18,7 @@ output:
 #  dragondown::thesis_word: default
 #  dragondown::thesis_epub: default
 abstract: |
-  Here is my abstract
+  Here is my abstract. This analysis is super important, it shows why you should use dragondown!
 acknowledgments: |
   I want to thank a few people.
 dedication: |
