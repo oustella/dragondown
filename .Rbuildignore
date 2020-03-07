@@ -1,3 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 inst/presentations/*
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
