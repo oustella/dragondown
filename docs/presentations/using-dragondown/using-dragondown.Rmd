@@ -1,0 +1,226 @@
+---
+title: "Using `dragondown` to Write Your Thesis"
+author: "Tyler Bradley"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ['xaringan-themer.css', 'using-dragondown-styles.css']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    includes:
+      after_body: insert-logo.html
+---
+
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE}
+library(xaringanthemer)
+duo(
+  primary_color = "#07294D", 
+  secondary_color = "#FFC600",
+  code_font_family = "Fira Code",
+  code_font_url    = "https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css"
+)
+```
+
+# Agenda
+
+.xlarge[
+  1. Introduction
+  
+2. What is Rmarkdown
+
+3. Using `dragondown`
+
+4. Live Demo
+
+5. Version Control
+
+]
+---
+class:center, middle
+
+<!-- <video src="https://www.youtube.com/watch?v=s3JldKoA0zw"></video> -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s3JldKoA0zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+---
+
+# What is `dragondown`?
+
+.large[
+
+  - `dragondown` is an R package that allows you to write your thesis in Rmarkdown
+  
+- Provides the required templates to properly format your thesis or dissertation in the Drexel format
+  
+- Easily integrate text, code and outputs 
+  
+- Allows you to focus on your research and not think about the minute formatting details often required with other text editors (e.g. LaTeX)
+  
+]
+ 
+
+---
+
+# What is Rmarkdown?
+
+.xlarge[
+A framework for authoring documents allowing you to easily integrate code and text to produce high quality output!
+
+]
+
+Benefits:
+.small[
+  - Integrate code directly into your text in a variety of languages (e.g. R, python, SQL, etc.)
+- Reduces copy/pasting
+- Allows users to integrate version control effectively
+- Easily re-render if data (or anything else) changes
+]
+
+---
+# Dependencies
+
+.xlarge[
+  1. [R](https://www.r-project.org/)
+2. [RStudio](https://rstudio.com/products/rstudio/download/)
+3. [LaTeX*](https://yihui.name/tinytex/)
+4. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) or equivalent version control system
+  .large[- See [Happy Git with R](https://happygitwithr.com/) for more instructions]
+5. [Python]() and [`reticulate`]**
+]
+
+.footnote[*Using `tinytex` is the easiest way to deal with this for R users]
+.footnote[**If you want to use python in your Rmarkdown documents. See [here](https://rstudio.github.io/reticulate/articles/r_markdown.html) if you are interested in learning more]
+---
+class: center, inverse, middle
+
+# Live Demo
+
+---
+
+# Why use `dragondown`?
+
+.large[`dragondown` takes all of the benefits of using Rmarkdown and wraps them up with a shiny bow*]
+
+.large[Allows you to break about your dissertation chapters to make them more manageable while still bundling them all together correctly]
+
+.large[Provides a structured framework for effectively storing all of the materials associated with your dissertation]
+
+<br><br>
+.xxlarge.center[**Reproducibility**]
+
+.footnote[*shiny bow includes handling all formatting requirements of a Drexel dissertation]
+
+---
+
+## The shiny bow (i.e. formatting)
+
+.pull-left[
+  .large[Writing a thesis is hard enough, why kill yourself worrying about something as minute as matching [exact formatting requirements](https://www.library.drexel.edu/~/media/Files/graduatecollege/forms/Thesis%20Manual.ashx?la=en)?]
+
+  .large[If you write your thesis using the `dragondown` package, then the formatting is automatically handled for you with the help of a custom LaTeX template!]
+]
+
+.pull-right[
+.middle[![](dragondown-format-example.gif)]
+]
+
+
+---
+
+## Managing your chapters (i.e. index)
+
+.pull-left[
+.large[`dragondown` provides a structured framework for organizing your thesis]
+
+.large[You can keep all of the files required for your thesis (e.g. book chapters, figures, R scripts)]
+]
+
+.xxsmall.pull-right[
+```{r, echo = FALSE, comment = NA}
+fs::dir_tree("live-examples/index")
+```
+]
+---
+##`_bookdown.yml`
+.small[
+
+```
+book_filename: "thesis"
+chapter_name: "Chapter "
+rmd_files: ["index.Rmd", "01-chap1.Rmd", "02-chap2.Rmd", "03-chap3.Rmd", "04-conclusion.Rmd", "98-references.Rmd", "99-appendix.Rmd"]
+download: [["thesis.pdf", "PDF"], ["thesis.epub", "EPUB"], ["thesis.docx", "Word"]]
+delete_merged_file: true
+```
+]
+
+- `chapter_name`: sets the prefix for your chapters
+- `rmd_files`: List the order of all of your .Rmd files. If you add a chapter then you need to add it here to include it in your book
+
+---
+## `index.Rmd`
+.xxsmall[
+```
+---
+author: 'Your R. Name'
+month: 'May'
+year: '2019'
+institution: 'Drexel University'
+# If you have multiple advisors, add a second, third, etc. line with the same
+# syntax as the first
+advisor: 
+  - 'Advisor F. Name'
+department: 'Mathematics'
+degree: 'Doctor of Philosophy'
+title: 'My PhD Dissertation'
+knit: "bookdown::render_book"
+site: bookdown::bookdown_site
+output: 
+  dragondown::thesis_pdf: default
+#  dragondown::thesis_gitbook: default
+#  dragondown::thesis_word: default
+#  dragondown::thesis_epub: default
+abstract: |
+  Here is my abstract
+acknowledgments: |
+  I want to thank a few people.
+dedication: |
+  You can have a dedication here if you wish.
+# Specify the location of the bibliography below
+bibliography: bib/thesis.bib
+#Specify a copyright
+copyright: |
+  All Rights Reserved.
+vita: |
+  The Vita is a biography of the student written in the third person in either essay or outline form. It should include full name, place and date of birth (optional), country of citizenship (optional), institutions attended, degrees and honors received, titles of publications, teaching and professional experience, and other pertinent data. The vita should be one page or less
+# Download your specific csl file and refer to it in the line below.
+csl: csl/apa.csl
+toc: true
+lot: true
+lof: true
+# location of drexel thesis/dissertation approval form
+approvalform: docs/approval-form.pdf
+---
+```
+]
+
+---
+
+## Reproducibility
+
+.large[Using this framework makes it easy for people (**including yourself**) to recreate your work because all of the data, analysis, and text are in the same place]
+
+.large[]
+
+
+
+---
+class: center, middle, inverse
+
+# Live Demo

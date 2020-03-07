@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Using dragondown to Write Your Thesis</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Tyler Bradley" />
+    <meta name="date" content="2020-02-23" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="using-dragondown-styles.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Using <code>dragondown</code> to Write Your Thesis
+### Tyler Bradley
+### 2020-02-23
+
+---
+
+
+
+
+
+
+
+
+# Agenda
+
+.xlarge[
+  1. Introduction
+  
+2. What is Rmarkdown
+
+3. Using `dragondown`
+
+4. Live Demo
+
+5. Version Control
+
+]
+---
+class:center, middle
+
+&lt;!-- &lt;video src="https://www.youtube.com/watch?v=s3JldKoA0zw"&gt;&lt;/video&gt; --&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/s3JldKoA0zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+---
+
+# What is `dragondown`?
+
+.large[
+
+  - `dragondown` is an R package that allows you to write your thesis in Rmarkdown
+  
+- Provides the required templates to properly format your thesis or dissertation in the Drexel format
+  
+- Easily integrate text, code and outputs 
+  
+- Allows you to focus on your research and not think about the minute formatting details often required with other text editors (e.g. LaTeX)
+  
+]
+ 
+
+---
+
+# What is Rmarkdown?
+
+.xlarge[
+A framework for authoring documents allowing you to easily integrate code and text to produce high quality output!
+
+]
+
+Benefits:
+.small[
+  - Integrate code directly into your text in a variety of languages (e.g. R, python, SQL, etc.)
+- Reduces copy/pasting
+- Allows users to integrate version control effectively
+- Easily re-render if data (or anything else) changes
+]
+
+---
+# Dependencies
+
+.xlarge[
+  1. [R](https://www.r-project.org/)
+2. [RStudio](https://rstudio.com/products/rstudio/download/)
+3. [LaTeX*](https://yihui.name/tinytex/)
+4. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) or equivalent version control system
+  .large[- See [Happy Git with R](https://happygitwithr.com/) for more instructions]
+5. [Python]() and [`reticulate`]**
+]
+
+.footnote[*Using `tinytex` is the easiest way to deal with this for R users]
+.footnote[**If you want to use python in your Rmarkdown documents. See [here](https://rstudio.github.io/reticulate/articles/r_markdown.html) if you are interested in learning more]
+---
+class: center, inverse, middle
+
+# Live Demo
+
+---
+
+# Why use `dragondown`?
+
+.large[`dragondown` takes all of the benefits of using Rmarkdown and wraps them up with a shiny bow*]
+
+.large[Allows you to break about your dissertation chapters to make them more manageable while still bundling them all together correctly]
+
+.large[Provides a structured framework for effectively storing all of the materials associated with your dissertation]
+
+&lt;br&gt;&lt;br&gt;
+.xxlarge.center[**Reproducibility**]
+
+.footnote[*shiny bow includes handling all formatting requirements of a Drexel dissertation]
+
+---
+
+## The shiny bow (i.e. formatting)
+
+.pull-left[
+  .large[Writing a thesis is hard enough, why kill yourself worrying about something as minute as matching [exact formatting requirements](https://www.library.drexel.edu/~/media/Files/graduatecollege/forms/Thesis%20Manual.ashx?la=en)?]
+
+  .large[If you write your thesis using the `dragondown` package, then the formatting is automatically handled for you with the help of a custom LaTeX template!]
+]
+
+.pull-right[
+.middle[![](dragondown-format-example.gif)]
+]
+
+
+---
+
+## Managing your chapters (i.e. index)
+
+.pull-left[
+.large[`dragondown` provides a structured framework for organizing your thesis]
+
+.large[You can keep all of the files required for your thesis (e.g. book chapters, figures, R scripts)]
+]
+
+.xxsmall.pull-right[
+
+```
+live-examples/index
+├── 01-chap1.Rmd
+├── 02-chap2.Rmd
+├── 03-chap3.Rmd
+├── 04-conclusion.Rmd
+├── 98-references.Rmd
+├── 99-appendix.Rmd
+├── _book
+│   ├── thesis.pdf
+│   └── thesis.tex
+├── _bookdown.yml
+├── _bookdown_files
+│   ├── thesis_cache
+│   │   └── latex
+│   │       ├── __packages
+│   │       ├── pressure_25293cdac8eae1a4e2086266bdb915b8.RData
+│   │       ├── pressure_25293cdac8eae1a4e2086266bdb915b8.rdb
+│   │       └── pressure_25293cdac8eae1a4e2086266bdb915b8.rdx
+│   └── thesis_files
+│       └── figure-latex
+│           ├── delaysboxplot-1.pdf
+│           ├── march3plot-1.pdf
+│           └── pressure-1.pdf
+├── bib
+│   └── thesis.bib
+├── chemarr.sty
+├── csl
+│   └── apa.csl
+├── data
+│   └── flights.csv
+├── docs
+│   ├── approval-form.pdf
+│   └── drexel-thesis.pdf
+├── drexel-thesis.cls
+├── figure
+│   ├── drexel-logo.pdf
+│   └── subdivision.pdf
+├── index.Rmd
+├── template.tex
+└── thesis.log
+```
+]
+---
+##`_bookdown.yml`
+.small[
+
+```
+book_filename: "thesis"
+chapter_name: "Chapter "
+rmd_files: ["index.Rmd", "01-chap1.Rmd", "02-chap2.Rmd", "03-chap3.Rmd", "04-conclusion.Rmd", "98-references.Rmd", "99-appendix.Rmd"]
+download: [["thesis.pdf", "PDF"], ["thesis.epub", "EPUB"], ["thesis.docx", "Word"]]
+delete_merged_file: true
+```
+]
+
+- `chapter_name`: sets the prefix for your chapters
+- `rmd_files`: List the order of all of your .Rmd files. If you add a chapter then you need to add it here to include it in your book
+
+---
+## `index.Rmd`
+.xxsmall[
+```
+---
+author: 'Your R. Name'
+month: 'May'
+year: '2019'
+institution: 'Drexel University'
+# If you have multiple advisors, add a second, third, etc. line with the same
+# syntax as the first
+advisor: 
+  - 'Advisor F. Name'
+department: 'Mathematics'
+degree: 'Doctor of Philosophy'
+title: 'My PhD Dissertation'
+knit: "bookdown::render_book"
+site: bookdown::bookdown_site
+output: 
+  dragondown::thesis_pdf: default
+#  dragondown::thesis_gitbook: default
+#  dragondown::thesis_word: default
+#  dragondown::thesis_epub: default
+abstract: |
+  Here is my abstract
+acknowledgments: |
+  I want to thank a few people.
+dedication: |
+  You can have a dedication here if you wish.
+# Specify the location of the bibliography below
+bibliography: bib/thesis.bib
+#Specify a copyright
+copyright: |
+  All Rights Reserved.
+vita: |
+  The Vita is a biography of the student written in the third person in either essay or outline form. It should include full name, place and date of birth (optional), country of citizenship (optional), institutions attended, degrees and honors received, titles of publications, teaching and professional experience, and other pertinent data. The vita should be one page or less
+# Download your specific csl file and refer to it in the line below.
+csl: csl/apa.csl
+toc: true
+lot: true
+lof: true
+# location of drexel thesis/dissertation approval form
+approvalform: docs/approval-form.pdf
+---
+```
+]
+
+---
+
+## Reproducibility
+
+.large[Using this framework makes it easy for people (**including yourself**) to recreate your work because all of the data, analysis, and text are in the same place]
+
+.large[]
+
+
+
+---
+class: center, middle, inverse
+
+# Live Demo
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+.logo {
+  background-image: url(dragondown.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    // ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

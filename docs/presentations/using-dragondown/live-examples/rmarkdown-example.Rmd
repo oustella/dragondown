@@ -1,0 +1,77 @@
+---
+title: "My Super Awesome Research Paper"
+author: "Tyler Bradley"
+date: "`r format(Sys.Date(), '%b %d, %Y')`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+```{r load-libraries}
+library(tidyverse)
+library(readxl)
+library(knitr)
+```
+
+## Introduction
+
+Ipsum odio nibh tempus curabitur hendrerit urna dapibus montes magna himenaeos. Quam vivamus odio fermentum quisque imperdiet a vehicula felis dignissim. Etiam montes nulla litora magnis justo himenaeos id diam. Commodo arcu magna ligula varius. Posuere ridiculus nisi vitae fringilla ullamcorper sociosqu dignissim pellentesque cum ridiculus tempus quis eu dictum augue elementum purus mauris.
+
+Sit cum accumsan cras nibh volutpat netus iaculis. Ultricies elementum eget mollis arcu risus habitasse dictumst mi. Potenti ultrices leo sem felis pellentesque conubia ligula orci fames. Netus proin tempor iaculis sollicitudin himenaeos netus etiam nulla varius pharetra. Lacus aptent neque ut congue molestie interdum commodo class placerat molestie cras vitae donec ultricies?
+
+```{r read-data}
+elrod_dat <- read_excel("data/Elrod_2020_2_17_Treated_Virgin.xlsx", 
+                        col_names = c("sample", "value"))
+
+kable(head(elrod_dat))
+```
+
+```{r elrod-tidy}
+elrod_tidy <- elrod_dat %>% 
+  mutate(
+    group = str_extract(sample, "[A-C]$"),
+    sample = as.numeric(str_replace(sample, "[A-C]$", ""))
+  ) %>% 
+  group_by(group, sample) %>% 
+  summarize(
+    min = min(value),
+    max = max(value),
+    median = median(value)
+  ) 
+
+kable(head(elrod_tidy))
+```
+
+## Including Plots
+
+Ipsum fermentum cubilia dictumst pretium sodales pharetra porttitor odio malesuada primis nascetur. Curabitur mus pulvinar nulla egestas ullamcorper class. Mattis rutrum vestibulum orci rutrum litora suspendisse ullamcorper vulputate venenatis suscipit.
+
+```{r elrod-plot}
+elrod_tidy %>% 
+  ggplot(aes(sample, median, color = group)) + 
+  geom_point() +
+  geom_line() + 
+  geom_errorbar(aes(ymin = min, ymax = max)) + 
+  theme_bw()
+
+```
+
+
+## Using python
+
+Sit cum accumsan cras nibh volutpat netus iaculis. Ultricies elementum eget mollis arcu risus habitasse dictumst mi. Potenti ultrices leo sem felis pellentesque conubia ligula orci fames. Netus proin tempor iaculis sollicitudin himenaeos netus etiam nulla varius pharetra. Lacus aptent neque ut congue molestie interdum commodo class placerat molestie cras vitae donec ultricies?
+
+```{using-python, eval = FALSE}
+library(reticulate)
+use_python("/usr/bin/python")
+```
+
+```{python, eval = FALSE}
+import pandas as pd
+```

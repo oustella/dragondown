@@ -23,7 +23,7 @@ navbar:
       text: Articles
       menu:
       - text: Using Dragondown
-        href: ../inst/presentations/using-dragondown/using-dragondown.html
+        href: presentations/using-dragondown/using-dragondown.html
     news:
       text: Changelog
       href: news/index.html
