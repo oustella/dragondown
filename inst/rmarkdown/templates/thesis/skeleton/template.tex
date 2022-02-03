@@ -48,7 +48,8 @@
 \usepackage{graphicx,latexsym}
 \usepackage{amsmath}
 \usepackage{amssymb,amsthm}
-\usepackage{longtable,booktabs,setspace}
+% OSL added the array package to avoid pandoc error 'undefined control sequence' with manually written tables (example in chapter 3)
+\usepackage{longtable,booktabs,setspace,array}
 \usepackage{chemarr} %% Useful for one reaction arrow, useless if you're not a chem major
 %\usepackage[hyphens]{url}
 % Added by CII
@@ -136,6 +137,31 @@ $endif$
   \fi
 }
 \makeatother
+
+% Added by OSL to avoid Pandoc version 2.11+ error related to CSLReferences
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry sp
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set line spacing
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc} % for \widthof, \maxof
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\maxof{\widthof{#1}}{\csllabelwidth}}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth}{#1}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+$endif$
 
 \renewcommand{\contentsname}{Table of Contents}
 % End of CII addition
